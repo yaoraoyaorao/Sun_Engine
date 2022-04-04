@@ -110,7 +110,8 @@ project "sandbox"
 	{
 		"SunEngine/vendor/spdlog/include",
 		"SunEngine/src",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"SunEngine/vendor"
 	}
 
 	links
