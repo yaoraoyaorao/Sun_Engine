@@ -1,7 +1,6 @@
 #include <SunEngine.h>
 
-
-
+#include "ImGui/imgui.h"
 class ExampleLayer :public SE::Layer
 {
 public:
@@ -16,7 +15,13 @@ public:
 
     void OnEvent(SE::Event& event)override
     {
-
+        
+    }
+    void OnImGuiRender()override
+    {
+        ImGui::Begin("Hello Imgui");
+        ImGui::Text("Hello Imgui");
+        ImGui::End();
     }
 };
 
@@ -25,7 +30,7 @@ class Sandbox:public SE::Application
 public:
     Sandbox() {
         
-        
+        PushLayer(new ExampleLayer());
     }
 
     ~Sandbox() {

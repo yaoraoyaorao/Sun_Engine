@@ -24,9 +24,10 @@ include "SunEngine/vendor/ImGui"
 
 project "SunEngine"
 	location "SunEngine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "c++"
-	staticruntime "off"
+	cppdialect "c++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")--输出目录
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")--中间临时文件的目录
@@ -40,6 +41,12 @@ project "SunEngine"
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
+
 	includedirs
 	{
 		"%{prj.name}/src",
@@ -57,7 +64,7 @@ project "SunEngine"
 		"opengl32.lib"
 	}
 	filter "system:windows"
-		cppdialect "c++17"
+		
 		systemversion "latest"
 
 		defines
@@ -67,36 +74,33 @@ project "SunEngine"
 			"_WINDLL",
             "_UNICODE",
             "UNICODE",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/sandbox")
-		}
 
 	filter "configurations:Debug"
 		defines "SE_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "SE_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	
 	filter "configurations:Dist"
 		defines "SE_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 
 project "sandbox"
 	location "sandbox"
 	kind "ConsoleApp"
+	cppdialect "c++17"
 	language "c++"
-	staticruntime "off"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")--输出目录
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")--中间临时文件的目录
@@ -120,7 +124,7 @@ project "sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "c++17"
+
 		systemversion "latest"
 
 		defines

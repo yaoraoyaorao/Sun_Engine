@@ -2,7 +2,7 @@
 #include "Core.h"
 #include "Window.h"
 #include "Events/Event.h"
-#include "Events/ApplicationEvent.h";
+#include "Events/ApplicationEvent.h"
 #include "LayerStack.h"
 #include "ImGui/ImGuiLayer.h"
 namespace SE

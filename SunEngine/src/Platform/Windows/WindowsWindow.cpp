@@ -1,10 +1,8 @@
 #include "sepch.h"
 #include "WindowsWindow.h"
-
-#include "SunEngine/Events/KeyEvent.h";
-#include "SunEngine/Events/MouseEvent.h";
-#include "SunEngine/Events/ApplicationEvent.h";
-
+#include "SunEngine/Events/KeyEvent.h"
+#include "SunEngine/Events/MouseEvent.h"
+#include "SunEngine/Events/ApplicationEvent.h"
 #include <glad/glad.h>
 
 namespace SE
