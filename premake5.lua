@@ -14,12 +14,13 @@ IncludeDir={}
 IncludeDir["GLFW"] = "SunEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "SunEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "SunEngine/vendor/ImGui"
+IncludeDir["glm"] = "SunEngine/vendor/glm"
 
 include "SunEngine/vendor/GLFW"
 include "SunEngine/vendor/Glad"
 include "SunEngine/vendor/ImGui"
 
-startproject "sandbox"
+
 
 project "SunEngine"
 	location "SunEngine"
@@ -36,6 +37,8 @@ project "SunEngine"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 	includedirs
 	{
@@ -43,7 +46,8 @@ project "SunEngine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 	links
 	{
@@ -105,7 +109,8 @@ project "sandbox"
 	includedirs
 	{
 		"SunEngine/vendor/spdlog/include",
-		"SunEngine/src"
+		"SunEngine/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
