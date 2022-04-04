@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SunEngine">
+      <UniqueIdentifier>{D156066D-3DC1-BAE3-86FF-6B89F2A89838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SunEngine\Events">
+      <UniqueIdentifier>{950DFE94-8106-1DE7-AA38-026C9690FCF2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SunEngine\ImGui">
+      <UniqueIdentifier>{BBE442F5-2770-B0B9-3081-33AE9C8B0CBA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine.h" />
+    <ClInclude Include="src\SunEngine\Application.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\Core.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\EntryPoint.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\Events\ApplicationEvent.h">
+      <Filter>SunEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\Events\Event.h">
+      <Filter>SunEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\Events\KeyEvent.h">
+      <Filter>SunEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\Events\MouseEvent.h">
+      <Filter>SunEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\ImGui\ImGuiLayer.h">
+      <Filter>SunEngine\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\KeyCode.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\Layer.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\LayerStack.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\Log.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\MouseCode.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SunEngine\Window.h">
+      <Filter>SunEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sepch.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3_loader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SunEngine\Application.cpp">
+      <Filter>SunEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SunEngine\ImGui\ImGuiLayer.cpp">
+      <Filter>SunEngine\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SunEngine\Layer.cpp">
+      <Filter>SunEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SunEngine\LayerStack.cpp">
+      <Filter>SunEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SunEngine\Log.cpp">
+      <Filter>SunEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sepch.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_opengl3.cpp" />
+  </ItemGroup>
+</Project>
