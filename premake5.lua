@@ -19,10 +19,13 @@ include "SunEngine/vendor/GLFW"
 include "SunEngine/vendor/Glad"
 include "SunEngine/vendor/ImGui"
 
+startproject "sandbox"
+
 project "SunEngine"
 	location "SunEngine"
 	kind "SharedLib"
 	language "c++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")--输出目录
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")--中间临时文件的目录
@@ -51,7 +54,6 @@ project "SunEngine"
 	}
 	filter "system:windows"
 		cppdialect "c++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -72,20 +74,17 @@ project "SunEngine"
 	filter "configurations:Debug"
 		defines "SE_DEBUG"
 		runtime "Debug"
-		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "SE_RELEASE"
 		runtime "Release"
-		buildoptions "/MD"
 		optimize "On"
 
 	
 	filter "configurations:Dist"
 		defines "SE_DIST"
 		runtime "Release"
-		buildoptions "/MD"
 		optimize "On"
 
 
@@ -93,6 +92,7 @@ project "sandbox"
 	location "sandbox"
 	kind "ConsoleApp"
 	language "c++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")--输出目录
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")--中间临时文件的目录
@@ -115,7 +115,6 @@ project "sandbox"
 
 	filter "system:windows"
 		cppdialect "c++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -128,17 +127,14 @@ project "sandbox"
 	filter "configurations:Debug"
         defines "SE_DEBUG"
         runtime "Debug"
-        buildoptions "/MDd"
         symbols "on"
 
     filter "configurations:Release"
         defines "SE_RELEASE"
         runtime "Release"
-        buildoptions "/MD"
         optimize "on"
 
     filter "configurations:Dist"
         defines "SE_DIST"
         runtime "Release"
-        buildoptions "/MD"
         optimize "on"

@@ -1,7 +1,7 @@
 #include "sepch.h"
 #include "Application.h"
 #include <glad/glad.h>
-
+#include "Input.h"
 namespace SE
 {
 	//#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -35,6 +35,7 @@ namespace SE
 			{
 				layer->OnUpdate();
 			}
+
 
 			m_Window->OnUpdate();
 		}
